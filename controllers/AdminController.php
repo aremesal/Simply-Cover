@@ -1,7 +1,7 @@
 <?php
 
 // The source code packaged with this file is Free Software, Copyright (C) 2010 by
-// ¡lvaro Remesal <contacto at alvaroremesal dot net>.
+// √Ålvaro Remesal <contacto at alvaroremesal dot net>.
 // It's licensed under the AFFERO GENERAL PUBLIC LICENSE unless stated otherwise.
 // You can get copies of the licenses here:
 //      http://www.affero.org/oagpl.html
