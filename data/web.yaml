@@ -1,0 +1,28 @@
+---
+system: Simply Cover
+version: 0.1
+Sitedata: 
+  title: SITE TITLE
+  subtitle: Another Simply Cover site
+  description: 
+  businessdata: 
+  Images: 
+  mainImage: 
+  logoImage: 
+  contactEmail: email@example.com
+Admindata: 
+  originalpass: 68771a8e7668f5af62465f3662807d35
+  pass: 68771a8e7668f5af62465f3662807d35
+  adminEmail: email@example.com
+  fromemail: email@example.com
+  fromsmtp: ssl://smtp.gmail.com
+  frompass: 
+  fromport: 465
+  fromssl: ssl
+  email: email@example.com
+  Maps: 
+    api: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    txt: 
+    lon: 6
+    lat: 40
+    zoom: 16

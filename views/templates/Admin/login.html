@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="dvContentData">
+    <div id="dvLogin">
+        {{lang['loginadvice']}}
+        <form action="/Admin/login" enctype="multipart/form-data" method="post">
+            <p>
+            <label for="email">{{lang['loginemail']}}</label>
+            <br />
+            <input type="email" id="email" name="email" autofocus="autofocus" />
+            </p>
+            <p>
+            <label for="pass">
+                {{lang['loginpassword']}}
+            </label>
+            <br />
+            <input type="password" id="pass" name="pass" />
+            </p>
+            <p>
+                <input type="submit" value="{{lang['loginenter']}}" />
+            </p>
+        </form>
+    </div>
+</div>
+{% endblock %}

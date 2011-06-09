@@ -1,0 +1,190 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="dvContentData">
+    <div id="dvNavigation">
+        <h2>{{lang['adminadmin']}}</h2>
+        <ul>
+          <li><a href="" class="aTabNavigation" id="AdminWebdata">{{lang['adminmenumaindata']}}</a></li>
+          <li><a href="" class="aTabNavigation" id="AdminImages">{{lang['adminmenuimages']}}</a></li>
+          <li><a href="" class="aTabNavigation" id="AdminCSS">{{lang['adminmenucss']}}</a></li>
+          <li><a href="" class="aTabNavigation" id="AdminAdmin">{{lang['adminmenuadmin']}}</a></li>
+          <li><a href="/Admin/logout" >{{lang['adminmenulogout']}}</a></li>
+        </ul>
+    </div>
+    <div id="dvAdmin">
+        <div id="dvAdminWebdata" class="dvTab">
+            <form action="/Admin/setWebdata" method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>{{lang['adminwebdatacompanydata']}}</legend>
+                    <p>
+                        <label for="title">{{lang['adminwebdatatitle']}}<span>{{lang['adminwebdatatitlehelp']}}</span></label>
+                        <input type="text" name="title" id="title" value="{{title}}" class="long" />
+                    </p>
+                    <p>
+                        <label for="title">{{lang['adminwebdatasubtitle']}}<span>{{lang['adminwebdatasubtitlehelp']}}</span></label>
+                        <input type="text" name="subtitle" id="subtitle" value="{{subtitle}}" class="long" />
+                    </p>
+                    <p>
+                        <label for="title">{{lang['adminwebdatacompanydata']}}<span>{{lang['adminwebdatacompanydatahelp']}}</span></label>
+                        <textarea name="businessdata" id="businessdata" placeholder="{{lang['adminwebdatacompanydataholder']}}" rows="10">{{businessdata}}</textarea>
+                    </p>
+                    <p>
+                        <label for="title">{{lang['adminwebdatadesc']}}<span>{{lang['adminwebdatadeschelp']}}</span></label>
+                        <textarea name="description" id="description" rows="20">{{description}}</textarea>
+                    </p>
+                    <p class="pFormImage">
+                        <img src="/images/uploads/thumb_{{logoImage}}" />
+                        <label for="title">{{lang['adminwebdatalogo']}}<span>{{lang['adminwebdatalogohelp']}}</span></label>
+                        <input type="file" name="logo" id="logo" />
+                    </p>
+                    <p class="pFormImage">
+                        <img src="/images/uploads/thumb_{{mainImage}}" />
+                        <label for="title">{{lang['adminwebdatamainimg']}}<span>{{lang['adminwebdatamainimghelp']}}</span></label>
+                        <input type="file" name="image" id="image" />
+                    </p>
+                    <p>
+                        <label for="contactEmail">{{lang['adminwebdataemail']}}<span>{{lang['adminwebdataemailhelp']}}</span></label>
+                        <input type="email" name="contactEmail" id="contactEmail" value="{{contactEmail}}" />
+                    </p
+                    <p>
+                        <input type="submit" value="{{lang['adminsave']}}" />
+                        <span class="spSaving">{{lang['adminsaving']}}...</span>
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+        <div id="dvAdminImages" class="dvTab">
+            {% if Images %}
+            <ul class="ulListImages">
+                {% for imgtitle,image in Images %}
+                <li>
+                    <a href="/Admin/delImage/{{image}}" class="aDelete">{{lang['adminimagesdelete']}}</a>
+                    <img src="/images/uploads/thumb_{{image}}" alt="{{imgtitle}}" title="{{imgtitle}}" />
+                    <br style="clear: both;" /><span class="spImgTitle">{{imgtitle}}</span>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <br  style="clear: both;" /><br />
+            <form action="/Admin/setImagesdata" method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>{{lang['adminimagesnewimage']}}</legend>
+                    <p>
+                        <label for="title">{{lang['adminimagestitle']}}</label>
+                        <br />
+                        <input type="text" name="title" id="title" />
+                    </p>
+                    <p>
+                        <label for="image">{{lang['adminimagesimage']}}</label>
+                        <br />
+                        <input type="file" name="image" id="image" />
+                    </p>
+                    <p>
+                        <input type="submit" value="{{lang['adminsave']}}" />
+                        <span class="spSaving">{{lang['adminsaving']}}...</span>
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+        <div id="dvAdminCSS" class="dvTab">
+            <form action="/Admin/setCustomCSS" method="post">
+                <fieldset>
+                    <legend>{{lang['admincss']}}</legend>
+                    <p>
+                        <label for="title">{{lang['admincssstylesheet']}}</label>
+                        <br />
+                        <textarea name="css" id="css" style="height: 400px;">{{css}}</textarea>
+                    </p>
+                    <p>
+                        <input type="submit" value="{{lang['adminsave']}}" />
+                        <span class="spSaving">{{lang['adminsaving']}}...</span>
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+        <div id="dvAdminAdmin" class="dvTab">
+            <form action="/Admin/setAdmindata" method="post">
+                <fieldset>
+                    <legend>{{lang['adminadminadmin']}}</legend>
+                    <p>
+                        <label for="email">{{lang['adminadminemail']}}</label>
+                        <br />
+                        <input type="email" name="email" id="email" value="{{adminEmail}}" />
+                    </p>
+                    <p>
+                        <label for="password">{{lang['adminadminpassword']}}</label>
+                        <br />
+                        <input type="password" name="password" id="password" value="" />
+                    </p>
+                    <p>
+                        <label for="password2">{{lang['adminadminrepeatpassword']}}</label>
+                        <br />
+                        <input type="password" name="password2" id="password2" value="" />
+                    </p>
+
+                    <legend>{{lang['adminmail']}}</legend>
+                    <p>
+                        <label for="email">{{lang['adminmailemail']}}</label>
+                        <br />
+                        <input type="email" name="fromemail" id="fromemail" value="{{fromemail}}" />
+                    </p>
+                    <p>
+                        <label for="frompass">{{lang['adminmailpassword']}}</label>
+                        <br />
+                        <input type="password" name="frompass" id="frompass" value="{{frompass}}" />
+                    </p>
+                    <p>
+                        <label for="fromsmtp">{{lang['adminmailserver']}}</label>
+                        <br />
+                        <input type="text" name="fromsmtp" id="fromsmtp" value="{{fromsmtp}}" />
+                    </p>
+                    <p>
+                        <label for="fromport">{{lang['adminmailport']}}</label>
+                        <br />
+                        <input type="text" name="fromport" id="fromport" value="{{fromport}}" />
+                    </p>
+                    <p>
+                        <label for="fromssl">{{lang['adminmailssl']}}</label>
+                        <br />
+                        <input type="radio" name="fromssl" id="fromssl" value="" checked />&nbsp;{{lang['adminmailauthnoauth']}}<br />
+                        <input type="radio" name="fromssl" id="fromssl" value="ssl" {% if fromssl=='ssl' %}checked{% endif %} />&nbsp;{{lang['adminmailauthssl']}}<br />
+                        <input type="radio" name="fromssl" id="fromssl" value="tsl" {% if fromssl=='tsl' %}checked{% endif %} />&nbsp;{{lang['adminmailauthtsl']}}
+                    </p>
+
+                    <legend>{{lang['adminmaps']}}</legend>
+                    <p>
+                        <label for="mapsapi">{{lang['adminmapsapi']}}</label>
+                        <br />
+                        <input type="text" name="mapsapi" id="mapsapi" value="{{Maps['api']}}" />
+                    </p>
+                    <p>
+                        <label for="mapslon">{{lang['adminmapslong']}}</label>
+                        <br />
+                        <input type="text" name="mapslon" id="mapslon" value="{{Maps['lon']}}" />
+                    </p>
+                    <p>
+                        <label for="mapslat">{{lang['adminmapslat']}}</label>
+                        <br />
+                        <input type="text" name="mapslat" id="mapslat" value="{{Maps['lat']}}" />
+                    </p>
+                    <p>
+                        <label for="mapstxt">{{lang['adminmapstext']}}</label>
+                        <br />
+                        <textarea name="mapstxt" id="mapstxt">{{Maps['txt']}}</textarea>
+                    </p>
+                    <p>
+                        <label for="mapszoom">{{lang['adminmapszoom']}}</label>
+                        <br />
+                        <input type="text" name="mapszoom" id="mapszoom" value="{{Maps['zoom']}}" />
+                    </p>
+                    <p>
+                        <input type="submit" value="{{lang['adminsave']}}" />
+                        <span class="spSaving">{{lang['adminsaving']}}...</span>
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

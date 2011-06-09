@@ -1,0 +1,20 @@
+/* 
+    Custom CSS
+*/
+
+body {
+
+}
+
+/* 
+    Anchura del contenedor de imagenes
+    Hay que cambiar el width en ambos, lo demas dejarlo como esta sin tocar
+*/
+
+.jcarousel-skin-tango .jcarousel-container-horizontal {
+    width:250px;
+}
+
+.jcarousel-skin-tango .jcarousel-clip-horizontal {
+    width:  250px;
+}

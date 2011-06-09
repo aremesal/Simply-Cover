@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="dvContentData">
+    <div id="dvLeft">
+        <img src="/images/uploads/{{mainImage}}" alt="Main image" />
+    </div>
+    <div id="dvRight">
+        {{description|safe}}
+    </div>
+</div>
+<div class="dvContentData">
+    <div id="dvImages">
+        <ul id="mycarousel" class="jcarousel-skin-tango">
+		{% if Images %}
+	        {% for title,image in Images %}
+	            <li>
+	                <a rel="lightbox-cover" href="/images/uploads/{{image}}" title="{{title}}"><img src="/images/uploads/thumb_{{image}}" alt="{{title}}" /></a>
+	            </li>
+	        {% endfor %}
+		{% endif %}
+        </ul>
+    </div>
+</div>
+<div class="dvContentData">
+    <div id="dvBusinessData">
+        <h2>{{lang['localization']}}</h2>
+        {{businessdata|safe}}
+    </div>
+    <div id="dvMap"></div>
+</div>
+<div class="dvContentData">
+    <div id="dvContact">
+        <h2>{{lang['contactform']}}</h2>
+        <p>
+            {{lang['contactwithus']}}
+            <br /><br />
+            {{lang['contactwithusmsg']|safe}}
+        </p>
+        <form action="/Cover/sendContact" method="post" >
+            <p>
+                <label for="name">
+                    {{lang['contactname']}}
+                </label>
+                <br />
+                <input type="email" id="name" name="name" class="long" />
+            </p>
+            <p>
+                <label for="email">
+                    {{lang['contactemailtlf']}}
+                </label>
+                <br />
+                <input type="email" id="email" name="email" placeholder="email@example.com o 666 666 111" class="long" />
+            </p>
+            <p>
+                <label for="subject">
+                    {{lang['contactsubject']}}
+                </label>
+                <br />
+                <input type="text" id="subject" name="subject" class="long" />
+            </p>
+            <p>
+                <label for="comment">
+                    {{lang['contactcomment']}}
+                </label>
+                <br />
+                <textarea id="comment" name="comment" placeholder="{{lang['contactcommenthelp']}}" rows="10"></textarea>
+            </p>
+            <p>
+                <input type="submit" value="{{lang['contactsend']}}" />
+                <span class="spSaving">{{lang['contactsending']}}...</span>
+                <input type="reset" value="{{lang['contactcancel']}}" />
+            </p>
+        </form>
+        <br style="clear: both" />
+    </div>
+</div>
+{% endblock %}

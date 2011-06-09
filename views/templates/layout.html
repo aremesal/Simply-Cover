@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Frameset//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html>
+    <head>
+        <title>{% block title %}{{webtitle}}{% endblock %}</title>
+
+        <link rel="icon" href="/images/uploads/favicon.gif" type="image/gif" />
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/jcarousel.css" />
+        <link rel="stylesheet" href="/css/formalize/master.css" />
+        <script src="/js/jquery.formalize.js"></script>
+        
+        <link href="/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="/css/custom.css" rel="stylesheet" type="text/css" />
+
+        <script src="/js/l10n.js" type="text/javascript"></script>
+        <script src="/js/nicEdit.js" type="text/javascript"></script>
+
+        <script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;key={{Maps['api']}}"></script>
+        <script src="/js/jquery.gmap-1.1.0-min.js" type="text/javascript"></script>
+
+        <script src="/js/jquery.lightbox.js?show_linkback=false" type="text/javascript"></script>
+
+        <script type="text/javascript">
+        //<![CDATA[
+            function showConfirm(msg) {
+                return confirm(msg);
+            }
+
+            $(document).ready( function(){
+                $('#mycarousel').jcarousel();
+
+                // Notices
+
+                // Show notice div, if exists
+                setTimeout(function() {$('#dvNotice').slideDown('800', function() {
+                        // If notice div is just informative, close after a few seconds
+                        if( !$('#dvNotice').hasClass('dvError') ) {
+                            setTimeout(function() {$('#dvNotice').slideUp('400'); }, 8000 );
+                        }
+                    }); }, 300 );
+
+                // Close button for notice div
+                $('span.spCloseNotice a').click( function() {
+                    $('#dvNotice').slideUp('600');
+                    return false;
+                });
+
+
+
+                // Admin
+                {% if idForm %}
+                $('#dv{{idForm}}').show();
+                {% else %}
+                $('#dvAdminWebdata').show();
+                {% endif %}
+
+                $('#dvNavigation ul li a.aTabNavigation').click( function() {
+                    $('.dvTab').hide();
+                    $('#dv' + $(this).attr('id')).show();
+                    return false;
+                });
+
+                $('.dvTab form').submit( function() {
+
+                    $(this).find('span.spSaving').show();
+                    $(this).find('input[type=submit]').attr('disabled','true');
+
+                    return true;
+                });
+
+                $('#dvContact form').submit( function() {
+
+                    $(this).find('input[type=reset]').hide();
+                    $(this).find('span.spSaving').show();
+                    $(this).find('input[type=submit]').attr('disabled','true');
+
+                    return true;
+                });
+
+                $('.aDelete').click( function() {
+                    return showConfirm('{{lang['confirmdelete']}}');
+                });
+
+
+                if( $('#dvMap').length ) {
+                    $("#dvMap").gMap({
+                        markers: [{
+                                latitude: {{Maps['lat']}},
+                                longitude: {{Maps['lon']}},
+                                html: "<b>{{title}}</b><br />{{Maps['txt']}}",
+                                popup: false
+                            }],
+                        zoom: {{Maps['zoom']}} });
+                }
+
+                // WYSIWYG Admin
+                if( $('#description').length ) {
+                    bkLib.onDomLoaded(function() {
+                    new nicEditor({iconsPath : '/images/nicEditorIcons.gif', buttonList : ['bold','italic','underline','left','center','right','justify','ol','ul','indent','outdent','hr','image','upload','link','unlink','fontSize','xhtml']}).panelInstance('description');
+                    });
+                    //    * 'fontFamily' * requires nicSelect
+                    //    * 'fontFormat' * requires nicSelect
+                }
+
+
+            });
+
+        //]]>
+
+        </script>
+    </head>
+    <body>
+        <div id="dvContainer">
+            {% block body %}
+            {% if notice['notice'] != '' %}
+            <div id="dvNotice" class="dvNotice {% if notice['state'] == 1 %}dvError{% endif %}">
+                {{notice['notice']|safe}}
+                <span class="spCloseNotice"><a href="">X</a></span>
+            </div>
+            {% endif %}
+            <div id="dvHeader">
+                <img src="/images/uploads/{{logoImage}}" alt="logo {{webtitle}}" title="{{webtitle}}" />
+                <h1>{{title}}</h1>
+                {% if subtitle != '' %}<h2>{{subtitle}}</h2>{% endif %}
+            </div>
+
+            {% block navigation %}
+            {% endblock %}
+
+            <div id="dvTopContent"></div>
+            <div id="dvContent">
+                {% block content %}{% endblock %}
+            </div>
+            <div id="dvBottomContent"></div>
+
+            <div id="dvFooter">
+                &copy; Copyright 2010 - {{title}} - <a href="https://github.com/aremesal/Simply-Cover" target="_blank">Simply Cover</a>
+			</div>
+			
+            {% endblock %}
+        </div>
+    </body>
+</html>

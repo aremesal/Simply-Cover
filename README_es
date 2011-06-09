@@ -1,0 +1,66 @@
+Simply Cover es sencilla una aplicación para ofrecer una portada para la web de un pequeño negocio.
+ 
+Esta aplicación y su código se distribuyen bajo una licencia GNU AFFERO GENERAL PUBLIC LICENSE.
+ 
+Motivación
+
+Muchas empresas, sobre todo pequeños negocios o tiendas de barrio, están entrando en internet. Muchas de ellas reservan un nombre
+de dominio pero tardan mucho tiempo en publicar su web, o incluso reservan el dominio únicamente para tener correo electrónico
+bajo su dominio, pero no van a tener web. Sin embargo, el público al ver que existe el dominio tratará de acceder a su web, encontrándose
+con el típico "En construcción" o peor aún, con una web en blanco o un mensaje del proveedor del servicio.
+
+Simply Cover ofrece un gestor de contenido muy sencillo y simple, pero que permite tener una portada web funcional y que ofrezca
+una buena imagen en el tiempo que se tarde en publicar la web real; si la empresa no va a publicar una web, Simply Cover ofrece
+una sencilla web donde mostrar los datos de la empresa, un formulario de contacto, etc para que el visitante no se lleve la
+mala sensación de no encontrar la web.
+
+Descripción
+
+Simply Cover es una aplicación web escrita en PHP, con el propósito de ser muy ligera para poder ser usada en hostings muy
+reducidos, como son los hostings más baratos de cualquier proveedor o los planes de correo electrónico que no contemplan una
+web más elaborada.
+
+Por ello, Simply Cover ocupa instalado menos de 2MB, y no hace uso de base de datos, pudiendo ser instalado en casi cualquier
+plan de hosting del mercado: basta con que ofrezca algunos Megabytes de almacenamiento y soporte para PHP5. Nada más.
+
+El sencillo gestor de contenidos permite configurar el título y lema de la empresa, así como su logotipo. Usted puede escribir
+una descripción libre acerca de la empresa, servicios, valor añadido, etc. Puede adjuntar ilimitadas imágenes que se mostrarán
+de forma agradable en un carrusel. Además, se ofrece al visitante un formulario de contacto para comunicarse con la empresa y 
+un mapa de localización.
+
+Instalación
+
+Puedes descargar el código desde https://github.com/aremesal/Simply-Cover, o clonar el proyecto usando Git:
+
+$ git clone git@github.com:aremesal/Simply-Cover.git
+
+Requisitos:
+
+- Alojamiento web con al menos 2MB de espacio
+- Soporte para PHP5 y la librería GD
+
+Procedimiento de instalación:
+
+- Descarga y descomprime el código o clona el proyecto en un directorio accesible desde web (por ejemplo, /public_html/ en un 
+servicio de alojamiento compartido).
+- Apunta el dominio a usar al directorio /public .
+- Edita el archivo /config/conf.php y ajusta el parámetro USELANG (al principio del archivo) al idioma deseado.
+- Comprueba que los archivos /data/web.yaml, /public/css/custom.css y los directorios /view/compiled y /public/images/uploads 
+tengan permisos de escritura para el servidor web.
+- Entra en la web. Al entrar por primera vez aparecerá un mensaje indicando que se debe cambiar la contraseña por defecto del administrador.
+Para ello, se debe entrar a la administración (http://example.com/Admin) con los datos del usuario por defecto:
+Usuario: email@example.com
+Password: simplycoveradmin
+- En la administración se pueden configurar todos los parámetros, redactar los textos y subir las imágenes.
+- Antes de nada, debes configurar la clave de la API de Google Maps (http://code.google.com/apis/maps/signup.html)
+
+Configurar un nuevo idioma
+
+Para configurar un idioma nuevo, crea un archivo con su código de idioma dentro del directorio /lang, por ejemplo, para francés
+puedes crear el archivo /lang/fr.php.
+
+Copia el contenido de otro de los idiomas dentro de este archivo, y cambia cada cadena de texto por la traducción deseada. Es
+importante que la primera línea del archivo sea la inclusión del idioma por defecto inglés (include_once '../lang/en.php';) como
+se puede ver en otros archivos de idioma, con en el de español (es.php).
+
+Una vez creado el idioma, ajusta el parámetro USELANG en el archivo /config/conf.php.

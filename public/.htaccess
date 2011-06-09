@@ -1,0 +1,9 @@
+RewriteEngine On
+# RewriteBase /
+
+Options +FollowSymlinks
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+Rewriterule ^(.*)$ /index.php?path=$1

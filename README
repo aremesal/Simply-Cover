@@ -1,0 +1,62 @@
+Simply Cover is a small web application to show a cover for a small bussiness' web.
+ 
+This application and its source code are delivered under the GNU AFFERO GENERAL PUBLIC LICENSE.
+ 
+Motivation
+
+So many companies, especially small bussiness or local shops, are arriving to Internet. Many of them reserve a domain name but they
+spend a lot of time for publishing their website, or even reserve the domain name just to have an email under their own domain, but
+they aren't planning to publish a website. But public, knowing existence of the domain, will try to enter their web, finding the
+topical "Under construction" or even worse, a blank website or a message from service provider.
+
+Simply Cover offers a very easy ans simple content management system, but can offer a fully functional web cover showing a good
+image in the meantime the actual website is published; if the company isn't going to publish a website, Simply Cover offers a 
+simple website showing company contact data, a contact form... so the visitant doesn't take a deception.
+
+Description
+
+Simply Cover is a web application written in PHP, aimed to be very lightweight in order to use it in small hostings, like 
+cheaper hostings or just-email-plans are, which doesn't support a more complicated web.
+
+So, Simply Cover weights under 2MB, and doesn't need a database; it can be installed on any hosting plan with just a few Megabytes
+of space and PHP5 support. It's all.
+
+The easy content manager allows you to configure title and subtitle for the company, and its logo. You can write a free description
+about your company, services, strong points, opening hours... You can attach as many images as you want, which will be shown using
+a pretty carrousel. The visitant can contact you through the provided contact form and a localization map.
+
+Instalation
+
+You can downlad source code from https://github.com/aremesal/Simply-Cover, or clone the project using Git:
+
+$ git clone git@github.com:aremesal/Simply-Cover.git
+
+Requirements:
+
+- Web hosting with at least 2MB of spare space
+- PHP5 and GD library support
+
+Steps to install:
+- Download and uncompress the code or clone the proyect, and put it in a directory accessable from the web (by example, /public_html/
+in a shared hosting service).
+- Point your domain to /public directory.
+- Edit file /config/conf.php and set USELANG param (up in the file) to your desire language.
+- Check that files /data/web.yaml, /public/css/custom.css and directories /view/compiled and /public/images/uploads 
+can be written by web server.
+- Go to the web. First time you'll see an advice pointing you to change default administrator password.
+To do this, enter the administration (http://example.com/Admin) with default user credentials:
+User: email@example.com
+Password: simplycoveradmin
+- In the administration area, you can configure all params, write texts and upload images.
+- First of all, you must set the Google Maps API Key (http://code.google.com/apis/maps/signup.html)
+ 
+Setting up a new language
+
+To configure a new language, create a new file with the language code into /lang directory, by example, to french language
+create /lang/fr.php.
+
+Copy content from another language file into the new archive, and change each string to the desired translation. The first
+line of the file must include default language (include_once '../lang/en.php';) as you can see in other language files
+like in the spanish one (es.php).
+
+Once you've created the new language, set USELANG param in /config/conf.php.

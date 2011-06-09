@@ -1,0 +1,329 @@
+
+/* The source code packaged with this file is Free Software, Copyright (C) 2010 by
+   Álvaro Remesal <contacto at alvaroremesal dot net>.
+   It's licensed under the AFFERO GENERAL PUBLIC LICENSE unless stated otherwise.
+   You can get copies of the licenses here:
+        http://www.affero.org/oagpl.html
+   AFFERO GENERAL PUBLIC LICENSE is also included in the file called "COPYING".
+*/
+
+/* 
+    Document   : style
+    Created on : 09-nov-2010, 20:39:57
+    Author     : txeke
+*/
+
+body {
+    font-size: 62.5%/1.6px; /* For em = px */
+    font-family: Helvetica, Verdana, Arial, arial, sans-serif;
+    background-image: url(../images/bgBody.jpg);
+    background-position: top;
+    background-repeat: repeat-x;
+    background-color: #ecebf4;
+}
+
+a {
+    color: #888;
+}
+
+#dvContainer {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#dvHeader {
+    width: 100%;
+    height: 160px;
+    background-color: transparent;
+}
+
+#dvHeader img {
+    float: left;
+    margin: 10px;
+}
+
+#dvHeader h1 {
+    margin: 0; padding: 0;
+    font-size: 3.2em;
+}
+#dvHeader h2 {
+    margin: 0; padding: 0;
+    font-size: 2.2em;
+}
+
+#dvFooter {
+    padding: 20px;
+    color: #888;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+#dvTopContent {
+    width: 100%;
+    height: 30px;
+    background-image: url(../images/bgTopContainer.png);
+    background-color: transparent;
+}
+
+#dvBottomContent {
+    width: 100%;
+    height: 30px;
+    background-image: url(../images/bgBottomContainer.png);
+    background-color: transparent;
+}
+
+#dvContent {
+    width: 100%;
+    overflow: hidden;
+    background-color: transparent;
+    background-image: url(../images/bgBordersContent.png);
+    background-repeat: repeat-y;
+}
+
+div.dvContentData {
+    width: 100%;
+    overflow: hidden;
+    background-image: url(../images/bgContent.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    clear: both;
+}
+
+#dvContent #dvLeft {
+    float: left;
+    width: 380px; /* 400px */
+    padding: 0 0 20px 20px;
+    background-color: transparent;
+}
+
+#dvContent #dvRight {
+    float: left;
+    width: 530px; /* 560px */
+    padding: 0 20px 20px 10px;
+    background-color: transparent;
+}
+
+#dvImages {
+    clear: both;
+    width: 710px; /* 750px */
+    padding: 20px;
+    overflow: hidden;
+    background-color: transparent;
+    margin: 0 auto;
+}
+
+
+#dvBusinessData {
+    clear: both;
+    width: 320px; /* 360px */
+    padding: 20px;
+    overflow: hidden;
+    background-color: transparent;
+    float: left;
+}
+
+#dvMap {
+    float: left;
+    border: 1px solid #DDD;
+    width: 500px; /* 600px */
+    height: 300px;
+    margin: 20px;
+}
+
+#dvContact {
+    clear: both;
+    width: 920px; /* 960px */
+    margin: 0 auto;
+    padding: 20px;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+#dvContact form {
+    width: 400px;
+    float: left;
+}
+
+#dvContact p {
+    width: 300px; /* 400px */
+    padding: 0 50px;
+    float: left;
+}
+
+#dvLogin {
+    clear: both;
+    width: 920px; /* 960px */
+    padding: 20px;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+/* Notifications */
+
+.dvNotice {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: orange;
+    border-bottom: 3px solid red;
+    padding: 10px 0;
+    text-align: center;
+    display: none;
+}
+
+span.spCloseNotice {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #522;
+    float: right;
+    margin-right: 20px;
+}
+
+
+/* Admin panel */
+
+#dvNavigation {
+    width: 160px; /* 200px */
+    padding: 0 20px 20px 20px;
+    float: left;
+}
+
+#dvNavigation h2 {
+    margin: 0;
+    font-size: 1.4em;
+    border: 1px solid #888;
+    background-color: #888;
+    color: #f8f8f8;
+    text-align: center;
+}
+
+#dvNavigation ul {
+    list-style-type: none;
+}
+
+#dvNavigation ul li {
+    margin: 0;
+}
+
+#dvNavigation ul li a {
+    display: block;
+    height: 22px;
+    width: 126px; /* 160px */
+    padding: 4px 16px;
+    border: 1px solid #888;
+    border-top: 0;
+    text-decoration: none;
+    color: #222;
+}
+
+#dvNavigation ul li a:hover {
+
+    background-color: #888;
+    color: #f8f8f8;
+}
+
+#dvAdmin {
+    width: 700px;
+    float: left;
+}
+
+div.dvTab {
+    width: 100%;
+    display: none;
+}
+
+span.spSaving {
+    display: none;
+    background-color: transparent;
+    background: url(../images/load.gif);
+    background-position: left;
+    background-repeat: no-repeat;
+    margin-left: 20px;
+    padding-left: 20px;
+    color: #888;
+}
+
+ul.ulListImages {
+    list-style-type: none;
+}
+
+ul.ulListImages li {
+    margin: 0;
+    height: 120px;
+    padding: 8px;
+    float: left;
+    border: 1px solid #AAA;
+    background-color: #fff;
+    color: #888;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+ul.ulListImages li img {
+    height: 104px;
+    float: right;
+    border: 0;
+}
+
+ul.ulListImages li a.aDelete {
+    text-indent: -9999px;
+    background-image: url(../images/del.gif);
+    background-position: top left;
+    background-repeat: no-repeat;
+    float: left;
+    display: block;
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+}
+
+ul.ulListImages li span.spImgTitle {
+    font-size: 0.9em;
+    text-align: center;
+    color: #888;
+}
+
+
+/* Forms */
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #888;
+}
+
+input.long {
+    width: 100%;
+}
+
+form fieldset p div div.nicEdit-panelContain, form fieldset p div div.nicEdit-panelContain div {
+    background-color: #efefef !important;
+}
+
+form fieldset p div {
+    background-color: #fff !important;
+}
+
+p.pFormImage {
+    height: 140px;
+    border: 1px solid #CCC;
+    padding: 20px;
+    background-color: #fff;
+}
+
+p.pFormImage img {
+    float: right;
+}
+
+label {
+    font-weight: bold;
+}
+
+label span {
+    display: block;
+    color: #666;
+    font-size: 0.9em;
+    font-weight: normal;
+}
