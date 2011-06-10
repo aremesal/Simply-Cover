@@ -19,7 +19,7 @@ Simply Cover is a web application written in PHP, aimed to be very lightweight i
 cheaper hostings or just-email-plans are, which doesn't support a more complicated web.
 
 So, Simply Cover weights under 2MB, and doesn't need a database; it can be installed on any hosting plan with just a few Megabytes
-of space and PHP5 support. It's all.
+of space and PHP5.3 support. It's all.
 
 The easy content manager allows you to configure title and subtitle for the company, and its logo. You can write a free description
 about your company, services, strong points, opening hours... You can attach as many images as you want, which will be shown using
@@ -34,7 +34,7 @@ $ git clone git@github.com:aremesal/Simply-Cover.git
 Requirements:
 
 - Web hosting with at least 2MB of spare space
-- PHP5 and GD library support
+- PHP5.3 and GD library support
 
 Steps to install:
 - Download and uncompress the code or clone the proyect, and put it in a directory accessable from the web (by example, /public_html/

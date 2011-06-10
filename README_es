@@ -21,7 +21,7 @@ reducidos, como son los hostings más baratos de cualquier proveedor o los planes
 web más elaborada.
 
 Por ello, Simply Cover ocupa instalado menos de 2MB, y no hace uso de base de datos, pudiendo ser instalado en casi cualquier
-plan de hosting del mercado: basta con que ofrezca algunos Megabytes de almacenamiento y soporte para PHP5. Nada más.
+plan de hosting del mercado: basta con que ofrezca algunos Megabytes de almacenamiento y soporte para PHP5.3. Nada más.
 
 El sencillo gestor de contenidos permite configurar el título y lema de la empresa, así como su logotipo. Usted puede escribir
 una descripción libre acerca de la empresa, servicios, valor añadido, etc. Puede adjuntar ilimitadas imágenes que se mostrarán
@@ -37,7 +37,7 @@ $ git clone git@github.com:aremesal/Simply-Cover.git
 Requisitos:
 
 - Alojamiento web con al menos 2MB de espacio
-- Soporte para PHP5 y la librería GD
+- Soporte para PHP5.3 y la librería GD
 
 Procedimiento de instalación:
 
