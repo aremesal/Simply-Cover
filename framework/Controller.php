@@ -79,7 +79,6 @@ class Controller {
      */
     public function _redirect($action = '') {
         header('Location: '.$this->mapea(func_get_args()));
-        $this->_getConnection()->commit();
         exit();
     }
 
@@ -97,7 +96,6 @@ class Controller {
             $params = array($params);
         
         header('Location: ' . $this->_mapback($params));
-        $this->_getConnection()->commit();
         exit();
     }
 

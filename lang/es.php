@@ -1,5 +1,4 @@
-﻿<?php 
-
+<?php
 // Include default lang
 include_once '../lang/en.php';
 
@@ -8,7 +7,7 @@ $lang['msgchangedefaultpass'] = 'Debes cambiar la contraseña por defecto de adm
 
 $lang['contactform'] = 'Formulario de contacto';
 $lang['contactwithus'] = 'Puedes contactar con nosotros a través de este formulario.';
-$lang['contactwithusmsg'] = 'Por favor, indícanos tu nombre y, si deseas que nos pongamos en contacto contigo, indícanos  email o un teléfono de contacto. 
+$lang['contactwithusmsg'] = 'Por favor, indícanos tu nombre y, si deseas que nos pongamos en contacto contigo, indícanos  email o un teléfono de contacto.
             <br /><br />
             Trataremos de responderte lo más rápido posible.
             <br /><br />
@@ -91,5 +90,6 @@ $lang['adminmapslong'] = 'Longitud';
 $lang['adminmapslat'] = 'Latitud';
 $lang['adminmapstext'] = 'Texto';
 $lang['adminmapszoom'] = 'Zoom';
+
 
 ?>

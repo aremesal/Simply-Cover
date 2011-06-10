@@ -1,18 +1,14 @@
-﻿<?php 
-
-// Include default lang
-include_once '../lang/en.php';
-
+<?php
 $lang['localization'] = 'Localization';
 $lang['msgchangedefaultpass'] = 'You must change default admin password (simplycoveradmin). To do it, go to <a href="/Admin">admin panel</a> (default email: email@example.com)';
 
 $lang['contactform'] = 'Contact form';
 $lang['contactwithus'] = 'You can contact us using this form.';
-$lang['contactwithusmsg'] = 'Please, tell us your name and, if you wish we contact you, tell us a contact email or phone number. 
+$lang['contactwithusmsg'] = 'Please, tell us your name and, if you wish we contact you, tell us a contact email or phone number.
             <br /><br />
-			We\'ll answer you as soon as posible.
+                        We\'ll answer you as soon as posible.
             <br /><br />
-			Thank you very much for your attention.';
+                        Thank you very much for your attention.';
 $lang['contactname'] = 'Name';
 $lang['contactemailtlf'] = 'Email or phone number';
 $lang['contactsubject'] = 'Subject';
